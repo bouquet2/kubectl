@@ -44,8 +44,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           platforms: linux/arm64
-          build_args: |
-            KUBECTL_VERSION=${{ env.LATEST_TAG }}
+          build-args: KUBECTL_VERSION=${{ env.LATEST_TAG }}
 
       - name: Create and push tag
         env:
