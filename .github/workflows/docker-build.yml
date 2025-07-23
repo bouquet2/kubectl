@@ -68,6 +68,7 @@ jobs:
           platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
           tags: ${{ env.REGISTRY_IMAGE }}
+          build-args: KUBECTL_VERSION=${{ env.LATEST_TAG }}
           outputs: type=image,push-by-digest=true,name-canonical=true,push=true
 
       - name: Export digest
